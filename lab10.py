@@ -30,25 +30,3 @@ while (place != 'q'):
         cur.execute("""UPDATE Lab10 SET City = ? , Country = ? WHERE id = ?""", (city,country,key))
         con.commit()
         con.close()
- 
-    
-    
-
-
-    
-   
-    
-
-
-
-
-
-
-    
-
-    
-    
-    #utfCode = ''.join([db.get(t, "") for t in place])
-    #print(utfCode)
-   
-   
