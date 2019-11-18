@@ -5,6 +5,7 @@ import time
 #from PIL import Image, ImageFont, ImageDraw
 import sqlite3
 import base64
+import webbrowser
 
 def clearScreen():
     lcd.clear()
@@ -129,15 +130,13 @@ def checkCollision(obj,x1,y1,vx,vy,Sx=128,Sy=64):
     else:
         pass
 
-def convertDict(utfCode):
+def openWeb(utfCode):
     
-    decode = base64.urlsafe_b64decode(utfCode)
-    decodeWeb = str(decode, "utf-8")
-    return decodeWeb
+    decode = base64.urlsafe_b64decode(utfCode) #Decodes url into bytes
+    decodeWeb = str(decode, "utf-8")  #decode from bytes to legible url
+    webbrowser.open(decodeWeb) #opens webbrowser using decodeWeb string
 
-def getWeb(decodeWeb)
-
-    webbrowser.open(decodeWeb,)
+    
 
 
 

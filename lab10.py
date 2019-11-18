@@ -1,5 +1,6 @@
 import sqlite3
 import base64
+import webbrowser
 import curt0061Library as lib 
 
 place = ''
@@ -9,8 +10,7 @@ con = sqlite3.connect('week10.db')
 cur = con.cursor()
 cur.execute('SELECT id,Link FROM Lab10 ')
 data = cur.fetchall()
-cur.close()
-con.close()
+
 db = {}
 
 for key,code in data:
@@ -22,8 +22,13 @@ local = int(place)
 for key,code in db.items():
   if local == key:
     utfCode = str(code)[2:-2]
-    lib.convertDict(utfCode)
+    lib.openWeb(utfCode)
+    city = input("What is the city name? ")
+    country = input("What is the country's name? ")
+
+
     
+
 
     
 
