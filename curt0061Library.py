@@ -133,10 +133,16 @@ def checkCollision(obj,x1,y1,vx,vy,Sx=128,Sy=64):
 def openWeb(utfCode):
     
     decode = base64.urlsafe_b64decode(utfCode) #Decodes url into bytes
-    decodeWeb = str(decode, "utf-8")  #decode from bytes to legible url
+    decodeWeb = str(decode, "utf-8")  #transform from bytes to legible url
     webbrowser.open(decodeWeb) #opens webbrowser using decodeWeb string
 
-    
+#def updateInfo(city,country,key):
+
+  #  info = ("""UPDATE Lab10 SET City = ? , Country = ? WHERE id = ?""", (city,country,key)
+ #   cur = con.cursor()
+  #  cur.execute(info)
+  #  con.commit()
+
 
 
 
