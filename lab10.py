@@ -17,18 +17,19 @@ while (place != 'q'):
 
   
   place = input("Please choose a number between 1-24 or press q to quit: ")
-  if place == 'q':
-    break
-  elif int(place) == key:
-    for key,code in db.items():
-      utfCode = str(code)[2:-2]
-      lib.openWeb(utfCode)
-      id = str(key)
-      city = input("What is the city name? ")
-      country = input("What is the country's name? ")
-      cur.execute("""UPDATE Lab10 SET City = ? , Country = ? WHERE id = ?""", (city,country,key))
-      con.commit()
-      con.close()
+  
+  for key,code in db.items():
+      if place == 'q':
+        break
+      elif int(place) == key:
+        utfCode = str(code)[2:-2]
+        lib.openWeb(utfCode)
+        id = str(key)
+        city = input("What is the city name? ")
+        country = input("What is the country's name? ")
+        cur.execute("""UPDATE Lab10 SET City = ? , Country = ? WHERE id = ?""", (city,country,key))
+        con.commit()
+        con.close()
  
     
     
